@@ -9,7 +9,7 @@ project(
 
 pd_inc = include_directories(['include'])
 
-both_libraries(
+libparadis = both_libraries(
 	'paradis',
 	['src/paradis.c'],
 	install: false,
@@ -18,13 +18,14 @@ both_libraries(
 
 test_0_exe = executable(
 	'test0',
-	['src/test.c', 'src/paradis.c'],
+	['test/radix_test.c'],
 	install: false,
 	include_directories: [pd_inc],
 	override_options: {
 		'buildtype': 'debug',
 	},
-	c_args: ['-DDEBUG']
+	c_args: ['-DDEBUG'],
+	link_with: [libparadis],
 )
 
 test(
