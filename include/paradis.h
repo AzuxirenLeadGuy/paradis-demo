@@ -4,49 +4,49 @@
 #include <stddef.h>
 /**
  * @brief The data type for exactly one byte
- * 
+ *
  */
 typedef unsigned char byte_t;
 
 /**
  * @brief The data type for integer elements
- * 
+ *
  */
 typedef unsigned int data_t;
 
 /**
  * @brief The type of errors
- * 
+ *
  */
 typedef enum {
 
 	/**
 	 * @brief No errors encountered
-	 * 
+	 *
 	 */
 	c_error_no_error = 0,
 
 	/**
-	 * @brief The data array argument is NULL
-	 * 
+	 * @brief The data array argument is NULL or invalid
+	 *
 	 */
-	c_error_null_argument,
+	c_error_invalid_argument,
 
 	/**
 	 * @brief The auxillary data could not be allocated
-	 * 
+	 *
 	 */
 	c_error_allocation_error,
 
 	/**
 	 * @brief The function is not implemented
-	 * 
+	 *
 	 */
 	c_error_not_implemented,
 
 	/**
 	 * @brief DEBUG error. Should not occur in Release
-	 * 
+	 *
 	 */
 	c_error_sle,
 } c_error_t;
