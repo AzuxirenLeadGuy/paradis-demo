@@ -1,4 +1,3 @@
 bin/
 .vscode/
-.clang-tidy
-.clang-format
+.cache/
