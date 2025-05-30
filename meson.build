@@ -18,7 +18,7 @@ both_libraries(
 
 test_0_exe = executable(
 	'test0',
-	['src/test.c'],
+	['src/test.c', 'src/paradis.c'],
 	install: false,
 	include_directories: [pd_inc],
 	override_options: {
