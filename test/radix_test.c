@@ -1,34 +1,6 @@
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#define DEBUG 1
-#include <paradis.h>
-
-c_error_t populate_array_rng(data_t *array, size_t size) {
-	unsigned int seed = time(0);
-	unsigned int idx;
-	for (idx = 0; idx < size; idx++) {
-		array[idx] = rand_r(&seed);
-	}
-	return 0;
-}
+#include "test_utils.h"
 
 const data_t debug_array_size = 512;
-
-c_error_t check_sorted(const data_t *array, size_t size) {
-	if (size <= 0) {
-		return c_error_allocation_error;
-	}
-
-	for (size_t idx = 1; idx < size; idx++) {
-		if (array[idx - 1] > array[idx]) {
-			return c_error_invalid_argument;
-		}
-	}
-	return c_error_no_error;
-}
-
 const size_t DEFAULT_SIZE = 0x4000;
 const size_t EPOCH_SIZE = 0x100;
 
